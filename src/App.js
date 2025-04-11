@@ -307,8 +307,18 @@ export default function ExpenseTracker() {
               </div>
             </form>
           </div>
-          <p>Think before you spend — that small purchase now could cost you peace later. Save like your future depends on it… because it does.
-          Money isn’t just for spending — it’s your future buying freedom. Choose wisely. Here is your data !!
+          <p style={{ fontSize: '16px',
+                      fontWeight:'bold',
+                      textAlign:'center',
+                      color: '#1976d2',
+                      fontFamily: 'Lato, sans-serif',
+                      lineHeight: '1.6',
+                      margin: '20px 0',
+                      padding: '5px',
+                      backgroundColor: '#e8f4ff',
+                      maxWidth:'content-fit',
+                      borderRadius: '5px'}}>
+             SAVINGS STORY
           </p>
           {/* Budget Summary - THIRD IN ORDER */}
           <div className="card">
