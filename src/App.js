@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 
@@ -327,16 +324,16 @@ export default function ExpenseTracker() {
             <div className="budget-overview">
               <div className="budget-item">
                 <span>Total Income:</span>
-                <span className="amount income">${totalIncome.toFixed(2)}</span>
+                <span className="amount income">Rs.{totalIncome.toFixed(2)}</span>
               </div>
               <div className="budget-item">
                 <span>Total Expenses:</span>
-                <span className="amount expense">${totalAmount.toFixed(2)}</span>
+                <span className="amount expense">Rs.{totalAmount.toFixed(2)}</span>
               </div>
               <div className="budget-item">
                 <span>Balance:</span>
                 <span className={`amount ${totalIncome - totalAmount >= 0 ? 'positive' : 'negative'}`}>
-                  ${(totalIncome - totalAmount).toFixed(2)}
+                  Rs.{(totalIncome - totalAmount).toFixed(2)}
                 </span>
               </div>
             </div>
@@ -353,7 +350,7 @@ export default function ExpenseTracker() {
                     style={{borderTopColor: categoryColors[cat.value]?.text || categoryColors.others.text}}>
                   <div>{cat.label}</div>
                   <div className="category-amount">
-                    ${(categoryTotals[cat.value] || 0).toFixed(2)}
+                    Rs.{(categoryTotals[cat.value] || 0).toFixed(2)}
                   </div>
                 </div>
               ))}
@@ -484,7 +481,7 @@ export default function ExpenseTracker() {
                 {filterType === 'year' && `Income for ${currentYear}`}
               </h3>
               <div className="total-amount">
-                ${totalIncome.toFixed(2)}
+                Rs.{totalIncome.toFixed(2)}
               </div>
             </div>
             
@@ -506,7 +503,7 @@ export default function ExpenseTracker() {
                     {getFilteredIncome().sort((a, b) => new Date(b.date) - new Date(a.date)).map(item => (
                       <tr key={item.id}>
                         <td>{item.date}</td>
-                        <td className="text-right">${Number(item.amount).toFixed(2)}</td>
+                        <td className="text-right">Rs.{Number(item.amount).toFixed(2)}</td>
                         <td className="text-center">
                           <div className="action-buttons">
                             <button
@@ -536,7 +533,7 @@ export default function ExpenseTracker() {
                 {filterCategory !== 'all' && ` - ${expenseCategories.find(c => c.value === filterCategory)?.label}`}
               </h2>
               <div className="total-amount">
-                ${totalAmount.toFixed(2)}
+                Rs.{totalAmount.toFixed(2)}
               </div>
             </div>
             
@@ -567,7 +564,7 @@ export default function ExpenseTracker() {
                             {expenseCategories.find(cat => cat.value === expense.category)?.label || 'Others'}
                           </span>
                         </td>
-                        <td className="text-right">${Number(expense.amount).toFixed(2)}</td>
+                        <td className="text-right">Rs.{Number(expense.amount).toFixed(2)}</td>
                         <td className="text-center">
                           <div className="action-buttons">
                             <button
